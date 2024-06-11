@@ -1,0 +1,11 @@
+package components
+
+import "github.com/ssss-tantalum/gotth-stack/internal/model"
+
+templ Todos(todos []model.Todo) {
+	<ul class="space-y-3" id="todo-list">
+		for _, todo := range todos {
+			@Todo(todo)
+		}
+	</ul>
+}

@@ -1,0 +1,21 @@
+package pages
+
+import "github.com/ssss-tantalum/gotth-stack/templates/layouts"
+import "github.com/ssss-tantalum/gotth-stack/templates/components"
+import "github.com/ssss-tantalum/gotth-stack/internal/model"
+
+templ Index(todos []model.Todo) {
+	@layouts.Base() {
+		<main class="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-200">
+			<h1 class="text-4xl font-bold text-gray-700 -mt-32">
+				Echo-Templ-HTMX Todo-App
+			</h1>
+			<div class="w-full max-w-xl items-center justify-center mt-5">
+				<div class="w-full px-8 py-6 bg-white shadow-md rounded-lg">
+					@components.AddTodo()
+					@components.Todos(todos)
+				</div>
+			</div>
+		</main>
+	}
+}
